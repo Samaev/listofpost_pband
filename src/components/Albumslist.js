@@ -20,7 +20,7 @@ export const AlbumslistModal = ({ userName, visibleAlbums, setVisibleAlbums }) =
         </ol>
         <div className='modal-footer'>
           <button
-            className='button'
+            className='button is-medium is-fullwidth is-primary is-outlined'
             onClick={()=>setVisibleAlbums([])}
           >Back to Users</button>
         </div>

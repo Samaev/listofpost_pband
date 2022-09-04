@@ -9,9 +9,17 @@
   align-items: center;
   justify-content: center;
 }
+ol {
+  padding: 50px;
+  width: max-content;
+}
+
+.list-item {
+  width: 100%;
+}
 
 .modal-content {
-  width: 500px;
+  width: max-content;
   background-color: #fff;
 }
 

@@ -51,24 +51,30 @@ console.log(users)
   }
 
   return (
-    <div className="App title">
-      React
+    <div className="App title is-2 container">
+      React and Redux
       {visiblePosts.length === 0 ? (
-        <ol>Our Users
+        <ol className='content is-lower-alpha'>
+          <h3 className='title is-1'>Our Users</h3>
           {users.map(user => {
             return (
               <li
+                className='list-item'
                 key={user.id}
               >
                 {user.name}
+                <div className='button-area'>
                 <button
+                  className='button is-link is-outlined is-fullwidth'
                   onClick={() => getUserPosts(user.id)}
                 >
                   Posts
                 </button>
                 <button
+                  className='button is-link is-outlined is-fullwidth'
                   onClick={() => getUsersAlbums(user.id)}
                 >Albums</button>
+                </div>
               </li>)
           })}
         </ol>) : (
