@@ -4,7 +4,7 @@ import { getUsers, getPosts, getAlbums } from './services/api';
 import { Postslist } from './components/Postslist';
 import { AlbumslistModal } from './components/Albumslist';
 
-function App() {
+export function App() {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const [userName, setUserName] = useState('');
