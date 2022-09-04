@@ -3,23 +3,42 @@ import { useEffect, useState } from 'react';
 import { getUsers, getPosts, getAlbums } from './services/api';
 import { Postslist } from './components/Postslist';
 import { AlbumslistModal } from './components/Albumslist';
+import { useAppDispatch, useAppSelector } from './app/hooks';
+import { userActions } from './features/users';
+import { postActions } from './features/posts';
+import { albumActions } from './features/albums';
 
 export function App() {
-  const [users, setUsers] = useState([]);
-  const [posts, setPosts] = useState([]);
+  const dispatch = useAppDispatch();
+  const {users} = useAppSelector(state=>state.users)
+  const {posts}= useAppSelector(state=>state.posts)
+  const {albums} = useAppSelector(state=>state.albums)
   const [userName, setUserName] = useState('');
-  const [albums, setAlbums] = useState([]);
   const [visiblePosts, setVisiblePosts] = useState([]);
   const [visibleAlbums, setVisibleAlbums] = useState([]);
 
   useEffect(() => {
     getUsers()
-      .then(usersFromServer => setUsers(usersFromServer));
+      .then(usersFromServer => {
+        dispatch(
+          userActions.setUsers(usersFromServer)
+        )
+      });
     getPosts()
-      .then(postsFromServer => setPosts(postsFromServer));
+      .then(postsFromServer => {
+        dispatch(
+          postActions.setPosts(postsFromServer)
+        )
+      });
     getAlbums()
-      .then(albumsFromServer => setAlbums(albumsFromServer))
-  }, [])
+      .then(albumsFromServer => {
+        dispatch(
+          albumActions.setAlbums(albumsFromServer)
+        )
+      })
+  }, [dispatch])
+
+console.log(users)
 
   const getUserPosts = (userId) => {
     setVisiblePosts(posts.filter(post => (userId === post.userId)));
@@ -32,7 +51,7 @@ export function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App title">
       React
       {visiblePosts.length === 0 ? (
         <ol>Our Users

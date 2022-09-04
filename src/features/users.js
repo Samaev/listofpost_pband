@@ -1,5 +1,5 @@
 const initialState = {
-  items: [],
+  users: [],
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -7,7 +7,7 @@ const usersReducer = (state = initialState, action) => {
     case 'users/set':
       return {
         ...state,
-        items: action.payload,
+        users: action.payload,
       };
 
     default:
@@ -15,7 +15,7 @@ const usersReducer = (state = initialState, action) => {
   }
 }
 
-export const actions = {
+export const userActions = {
   setUsers: (users) => ({
     type: 'users/set',
     payload: users,
