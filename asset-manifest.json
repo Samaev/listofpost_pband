@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/listofpost_pband/static/css/main.e847a5e4.css",
-    "main.js": "/listofpost_pband/static/js/main.640a4149.js",
+    "main.js": "/listofpost_pband/static/js/main.5b2fef7c.js",
     "index.html": "/listofpost_pband/index.html",
     "main.e847a5e4.css.map": "/listofpost_pband/static/css/main.e847a5e4.css.map",
-    "main.640a4149.js.map": "/listofpost_pband/static/js/main.640a4149.js.map"
+    "main.5b2fef7c.js.map": "/listofpost_pband/static/js/main.5b2fef7c.js.map"
   },
   "entrypoints": [
     "static/css/main.e847a5e4.css",
-    "static/js/main.640a4149.js"
+    "static/js/main.5b2fef7c.js"
   ]
 }
