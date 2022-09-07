@@ -38,8 +38,6 @@ export function App() {
       })
   }, [dispatch])
 
-console.log(users)
-
   const getUserPosts = (userId) => {
     setVisiblePosts(posts.filter(post => (userId === post.userId)));
     setUserName(users[userId - 1].name);
